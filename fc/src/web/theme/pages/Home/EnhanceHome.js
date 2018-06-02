@@ -9,6 +9,7 @@ export default HomeQuery =>
       }),
       props: ({ data }) => ({
         products: data.products,
+        categories: data.categories,
         loading: data.loading
       })
     })

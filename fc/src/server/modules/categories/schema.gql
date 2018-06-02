@@ -1,78 +1,15 @@
 type Query {
-  "Get a category by identifier"
-  category(id: Int!): Category
-
-  "Get the navigation menu data"
-  navigationMenu(
-    "For optimization purpose. Prevents extra recursive call for common categories data."
-    depth: Int
-  ): [Category]
-
-  # "Match the SEO friendly urls with the corresponding entity"
-  # matchUrls(url: String!): [Entity]
-  # "Find the SEO friendly urls for an entity"
-  # urlsFor(
-  #   "The entity's type (category / product / ...)"
-  #   type: String!
-  #   "The entity's identifiers"
-  #   ids: [String]!
-  # ): [Entity]
+  "Fetch all categories"
+  categories: [Category]
+  "Fetch a category by code"
+  category(code: String!): Category
 }
 
-"Represents a category part of a breadcrumb"
-type BreadcrumbCategory {
-  "The name of the breadcrumb category"
-  name: String
-  "The path to the breadcrumb category"
-  path: String
-}
-
-"Represents a category for the shop"
 type Category {
-  "The category's unique identifier"
-  id: Int
+  "The category's ID"
+  code: String!
   "The category's name"
   name: String
-  "The category's position"
-  position: Int
-  "The category's url. If the integration supports it, it will be an SEO friendly url"
-  path: String
-  "The sitemap priority value"
-  priority: Float
-  "The sitemap change frequency value"
-  changefreq: String
-  "Indicates if the category must appear in the navigation menu"
-  include_in_menu: Boolean
-  "The children categories of the current one"
-  children: [Category]
-  # "The categoy's images used for SEO"
-  # seoImages: [SitemapImage]
-  "Last modification date"
-  lastmod: String
-  # "Represents the available products for the category with one or more filters active"
-  # layer(params: QueryInput): Layer
-  "The category's meta title"
-  meta_title: String
-  "The category's meta description"
-  meta_description: String
-  "The category main image path"
-  image: String
-  "The category's description"
-  description: String
-  "The category's breadcrumb ordered hierarchically"
-  breadcrumb: [BreadcrumbCategory]
+  "The category's URL"
+  url: String!
 }
-
-# "Represents an entity linked with a SEO url"
-# type Entity {
-#   "The entity's url"
-#   url: String
-#   "The entity's type (category / product / ...)"
-#   type: String
-#   "The entity's unique identifier"
-#   identifier: String
-#   "The entity's url when a redirect is needed"
-#   target_path: String
-#   "Indicates if a redirection is needed"
-#   redirect_type: Int
-# }

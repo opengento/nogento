@@ -1,15 +1,27 @@
-const CategoryLoader = client => {
-  const loadAll = () => {
-    return [loadById()];
-  };
+import adapter from "./utils/adapter";
 
-  const loadById = () => {
-    return { name: "Piou" };
-  };
+const defaultSearchParams = {
+  limit: 10
+};
+
+const CategoryLoader = axiosInstance => {
+  const loadAll = () =>
+    axiosInstance
+      .get("/api/rest/v1/categories", {
+        params: defaultSearchParams
+      })
+      .then(({ data }) => data._embedded.items)
+      .then(adapter.adaptCategories);
+
+  const loadByCode = code =>
+    axiosInstance
+      .get(`/api/rest/v1/categories/${code}`)
+      .then(({ data }) => data)
+      .then(adapter.adaptCategory);
 
   return {
     loadAll,
-    loadById
+    loadByCode
   };
 };
 
