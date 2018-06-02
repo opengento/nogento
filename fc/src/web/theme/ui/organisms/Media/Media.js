@@ -8,10 +8,9 @@ class Media extends Component {
 
     return (
       <div className="media" tabIndex="0">
-        <div className="media__layer">
-          {media}
-          <div className="media__details">{renderDetails()}</div>
-        </div>
+        <div className="media__layer" />
+        {media}
+        <div className="media__details">{renderDetails()}</div>
       </div>
     );
   }

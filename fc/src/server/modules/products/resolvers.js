@@ -1,5 +1,7 @@
 export default {
   Query: {
-    products: (_, __, context) => context.Product.loadAll()
+  },
+  Product: {
+    imageUrl: ({ imageUrl }, _, context) => "https://placeimg.com/640/480/tech"
   }
 };

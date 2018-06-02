@@ -33,19 +33,22 @@
   }
 
   &__layer {
-    background-color: rgba(105, 47, 141, 0.1);
+    background-color: transparent;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
+    opacity: 0;
   }
 
   &:hover,
   &:focus {
     .media__layer {
       display: block;
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(105, 47, 141, 0.3);
+      transition: opacity 0.3s ease, transform 0.3s ease-out;
     }
     .media__details {
       opacity: 1;
