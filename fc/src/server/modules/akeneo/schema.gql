@@ -14,3 +14,9 @@ type Product {
   "The product's image"
   imageUrl: String
 }
+
+"A category"
+type Category {
+  "The product name"
+  name: String
+}

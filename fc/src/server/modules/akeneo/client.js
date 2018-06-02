@@ -1,4 +1,4 @@
-const akaneoClient = (axiosInstance, config) => {
+const akeneoClient = (axiosInstance, config) => {
   const getToken = () =>
     axiosInstance
       .post(
@@ -32,6 +32,21 @@ const akaneoClient = (axiosInstance, config) => {
         .then(result => result.data._embedded.items);
     });
 
+    const loadCategories = () =>
+        getToken().then(token => {
+          return axiosInstance
+            .get("/api/rest/v1/categories", {
+              params: {
+                limit: 100
+              },
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            })
+            .then(result => result.data._embedded.items);
+        });
+
+
   const getImageForProduct = imageUrl =>
     getToken().then(token =>
       axiosInstance
@@ -50,4 +65,4 @@ const akaneoClient = (axiosInstance, config) => {
   };
 };
 
-module.exports = akaneoClient;
+module.exports = akeneoClient;

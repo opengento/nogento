@@ -1,5 +1,5 @@
 import typeDefs from "./schema.gql";
-import { ProductLoader } from "./loader";
+import { ProductLoader, CategoryLoader } from "./loader";
 import resolvers from "./resolvers";
 import client from "./client";
 import config from "./config/akeneo";
@@ -16,7 +16,8 @@ const axiosInstance = axios.create({
 export default {
   namespace: "Akeneo",
   context: {
-    ProductLoader: ProductLoader(client(axiosInstance, config), adaptProducts)
+    ProductLoader: ProductLoader(client(axiosInstance, config), adaptProducts),
+    CategoryLoader: CategoryLoader(client(axiosInstance, config), adaptCategories),
   },
   typeDefs,
   resolvers
