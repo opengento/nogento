@@ -1,3 +1,0 @@
-fragment StoreContactFragment on StoreInformation {
-  phone
-}

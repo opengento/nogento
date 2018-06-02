@@ -1,8 +1,0 @@
-fragment PriceFragment on Price {
-  includeTax
-  value {
-    amount
-    currency
-  }
-}
-
