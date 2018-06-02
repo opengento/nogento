@@ -1,0 +1,9 @@
+[submodule "crm"]
+	path = crm
+	url = git@github.com:oroinc/crm-application.git
+[submodule "marello"]
+	path = marello
+	url = git@github.com:marellocommerce/marello-application.git
+[submodule "akeneo"]
+	path = akeneo
+	url = git@github.com:akeneo/pim-community-standard.git
