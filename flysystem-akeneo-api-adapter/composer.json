@@ -11,5 +11,10 @@
             "name": "Grégory Planchat",
             "email": "gregory@kiboko.fr"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Opengento\\AkeneoApi\\": ""
+        }
+    }
 }
