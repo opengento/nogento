@@ -1,0 +1,14 @@
+{
+    "name": "opengento/flysystem-akeneo-api-adapter",
+    "description": "A Flysystem adapter to access to Akeneo image & assets from the API",
+    "type": "library",
+    "require": {
+        "league/flysystem": "^1.0"
+    },
+    "authors": [
+        {
+            "name": "Grégory Planchat",
+            "email": "gregory@kiboko.fr"
+        }
+    ]
+}
