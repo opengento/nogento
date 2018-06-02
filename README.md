@@ -20,11 +20,9 @@ Tail logs
 docker-compose logs -f npm
 ```
 
-Troubleshooting
----------------
-`build/server.js: Permission denied`
+Restart container
+-----------------
 ```
-chmod -R 777 build
 docker-compose restart npm
 ```
 
