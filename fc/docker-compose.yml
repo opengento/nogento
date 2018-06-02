@@ -1,0 +1,14 @@
+version: '2'
+services:
+  npm:
+    image: node:8.10.0
+    network_mode: "bridge"
+    ports:
+      - "4000:4000"
+      - "8080:8080"
+    volumes:
+      - ./:/project
+      - ~/.npm:/root/.npm
+    command: start
+    entrypoint: npm
+    working_dir: /project

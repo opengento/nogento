@@ -1,0 +1,9 @@
+#import "../StoreDetails/StoreDetailsFragment.gql"
+#import "../StoreContact/StoreContactFragment.gql"
+
+fragment FooterFragment on StoreInformation {
+  ...StoreContactFragment
+  owner {
+    ...StoreDetailsFragment
+  }
+}
