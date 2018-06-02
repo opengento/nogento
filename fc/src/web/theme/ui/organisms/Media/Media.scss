@@ -3,6 +3,7 @@
   background: $shade02;
   overflow: hidden;
   width: 100%;
+  height: 100%;
 
   img {
     width: 100%;
@@ -31,8 +32,21 @@
     transition: opacity 0.3s ease, transform 0.3s ease-in;
   }
 
+  &__layer {
+    background-color: rgba(105, 47, 141, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
   &:hover,
   &:focus {
+    .media__layer {
+      display: block;
+    }
     .media__details {
       opacity: 1;
       transform: none;
