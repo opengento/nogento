@@ -1,15 +1,5 @@
-import axios from "axios";
-import config from "./config/akeneo";
-
-const axiosInstance = axios.create({
-  baseURL: config.url,
-  headers: {
-    "Content-Type": "application/json"
-  }
-});
-
-const akaneoClient = () => ({
-  getToken: () =>
+const akaneoClient = (axiosInstance, config) => {
+  const getToken = () =>
     axiosInstance
       .post(
         "/api/oauth/v1/token",
@@ -26,7 +16,38 @@ const akaneoClient = () => ({
           }
         }
       )
-      .then(result => result.data.access_token)
-});
+      .then(result => result.data.access_token);
 
-module.exports = akaneoClient();
+  const loadProducts = () =>
+    getToken().then(token => {
+      return axiosInstance
+        .get("/api/rest/v1/products", {
+          params: {
+            limit: 100
+          },
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        .then(result => result.data._embedded.items);
+    });
+
+  const getImageForProduct = imageUrl =>
+    getToken().then(token =>
+      axiosInstance
+        .get(imageUrl, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        .catch(_ => Promise.resolve("should be an URL to a placeholder image"))
+        .then(_ => Promise.resolve("should be an URL to a placeholder image"))
+    );
+
+  return {
+    loadProducts,
+    getImageForProduct
+  };
+};
+
+module.exports = akaneoClient;
