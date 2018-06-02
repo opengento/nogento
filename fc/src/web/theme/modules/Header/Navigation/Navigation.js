@@ -1,11 +1,16 @@
 import React from "react";
+
+import EnhanceNavigation from "./EnhanceNavigation";
+import NavigationQuery from "./NavigationQuery.gql";
+
 import { CartModal } from "../../Cart";
 import Button from "theme/ui/atoms/Button";
 import IconWithLabel from "theme/ui/molecules/IconWithLabel";
 
-const Navigation = () => {
+const Navigation = ({ categories }) => {
   return (
     <nav>
+      {categories && categories.map(category => category.name)}
       <CartModal>
         {openCart => (
           <Button type="invisible" onClick={openCart}>
@@ -17,4 +22,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default EnhanceNavigation({ NavigationQuery })(Navigation);
