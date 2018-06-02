@@ -1,0 +1,16 @@
+#import "theme/ui/atoms/Typography/Price/PriceFragment.gql"
+
+fragment CartItemFragment on CartItem {
+  name
+  qty
+  item_id
+  sku
+  product {
+    imageUrl
+  }
+  priceInfo {
+    rowTotalInclTax {
+      ...PriceFragment
+    }
+  }
+}

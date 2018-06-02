@@ -1,0 +1,16 @@
+type Query {
+  "Fetch all products"
+  products: [Product]
+  "Fetch one product by SKU"
+  product(sku: String!): Product
+}
+
+"A product"
+type Product {
+  "The product's SKU"
+  sku: String!
+  "The product's name"
+  name: String!
+  "The product's description"
+  description: String
+}

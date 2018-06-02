@@ -1,0 +1,10 @@
+#import "theme/modules/ProductItem/ProductItemFragment.gql"
+
+fragment ProductListFragment on Category {
+  name
+  layer(params: $params) {
+    products {
+      ...ProductItemFragment
+    }
+  }
+}
