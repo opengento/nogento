@@ -10,15 +10,8 @@ const ProductLoader = axiosInstance => {
       .then(result => result.data._embedded.items)
       .then(adaptProducts);
 
-  const getImageForProduct = imageUrl =>
-    axiosInstance
-      .get(imageUrl)
-      .catch(_ => Promise.resolve("should be an URL to a placeholder image"))
-      .then(_ => Promise.resolve("should be an URL to a placeholder image"));
-
   return {
-    loadAll,
-    getImageForProduct
+    loadAll
   };
 };
 

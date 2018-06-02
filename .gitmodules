@@ -7,3 +7,6 @@
 [submodule "akeneo"]
 	path = akeneo
 	url = git@github.com:akeneo/pim-community-standard.git
+[submodule "flyimg"]
+	path = flyimg
+	url = git@github.com:opengento/flyimg-akeneo.git

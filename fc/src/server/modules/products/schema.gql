@@ -11,6 +11,4 @@ type Product {
   name: String
   "The product's description"
   description: String
-  "The product's image"
-  imageUrl: String
 }
