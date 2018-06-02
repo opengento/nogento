@@ -1,20 +1,24 @@
-const ProductLoader = client => {
-  const loadAll = () => {
-    return [loadBySku()];
-  };
+const adaptProducts = require("./utils/adapter");
+const ProductLoader = axiosInstance => {
+  const loadAll = () =>
+    axiosInstance
+      .get("/api/rest/v1/products", {
+        params: {
+          limit: 100
+        }
+      })
+      .then(result => result.data._embedded.items)
+      .then(adaptProducts);
 
-  const loadBySku = () => {
-    const product = {
-      sku: "001",
-      name: "Foo",
-      description: "Bar"
-    };
-    return product;
-  };
+  const getImageForProduct = imageUrl =>
+    axiosInstance
+      .get(imageUrl)
+      .catch(_ => Promise.resolve("should be an URL to a placeholder image"))
+      .then(_ => Promise.resolve("should be an URL to a placeholder image"));
 
   return {
     loadAll,
-    loadBySku
+    getImageForProduct
   };
 };
 
