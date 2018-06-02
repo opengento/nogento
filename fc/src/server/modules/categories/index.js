@@ -4,7 +4,7 @@ import resolvers from "./resolvers";
 import makeAxiosInstance from "../../utils/makeAxiosInstance";
 
 export default {
-  namespace: "Akeneo.Categories",
+  namespace: "Akeneo/Categories",
   context: { Category: CategoryLoader(makeAxiosInstance()) },
   typeDefs,
   resolvers

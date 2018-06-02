@@ -1,3 +1,4 @@
 src/server/config/akeneo.js
+src/server/config/cdn.js
 build
 node_modules

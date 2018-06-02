@@ -4,7 +4,7 @@ import { ProductLoader } from "./loader";
 import resolvers from "./resolvers";
 
 export default {
-  namespace: "Akeneo.Products",
+  namespace: "Akeneo/Products",
   context: { Product: ProductLoader(makeAxiosInstance()) },
   typeDefs,
   resolvers
