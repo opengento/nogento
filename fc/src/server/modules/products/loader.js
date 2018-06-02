@@ -1,8 +1,4 @@
-import akaneoClient from "./client";
-
-const ProductLoader = () => {
-  akaneoClient.getToken().then(token => console.log("GOT TOKEN", token));
-
+const ProductLoader = client => {
   const loadAll = () => {
     return [loadBySku()];
   };
@@ -23,5 +19,5 @@ const ProductLoader = () => {
 };
 
 module.exports = {
-  ProductLoader: ProductLoader()
+  ProductLoader
 };

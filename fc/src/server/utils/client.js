@@ -1,12 +1,5 @@
-import axios from "axios";
-import config from "./config/akeneo";
-
-const axiosInstance = axios.create({
-  baseURL: config.url,
-  headers: {
-    "Content-Type": "application/json"
-  }
-});
+const axiosInstance = require("./axiosInstance");
+const config = require("../config/akeneo");
 
 const akaneoClient = () => ({
   getToken: () =>
