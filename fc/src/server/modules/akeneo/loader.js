@@ -1,7 +1,7 @@
 import akaneoClient from "./client";
 
 const ProductLoader = () => {
-  akaneoClient.getToken();
+  akaneoClient.getToken().then(token => console.log("GOT TOKEN", token));
 
   const loadAll = () => {
     return [loadBySku()];
