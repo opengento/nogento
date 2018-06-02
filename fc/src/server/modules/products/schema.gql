@@ -1,6 +1,8 @@
 type Query {
   "Fetch all products"
   products: [Product]
+  "Fetch one product by its SKU"
+  product(sku: String!): Product
 }
 
 "A product"
