@@ -1,5 +1,3 @@
 import Akeneo from "./modules/akeneo";
 
-export default [
-  Akeneo
-];
+export default [Akeneo];

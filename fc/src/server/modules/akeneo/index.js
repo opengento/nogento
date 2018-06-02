@@ -4,9 +4,7 @@ import resolvers from "./resolvers";
 
 export default {
   namespace: "Akeneo",
-  context: {
-    ProductLoader
-  },
+  context: { ProductLoader },
   typeDefs,
   resolvers
 };

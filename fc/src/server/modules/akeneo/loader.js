@@ -1,6 +1,8 @@
-import axios from "axios";
+import akaneoClient from "./client";
 
 const ProductLoader = () => {
+  akaneoClient.getToken();
+
   const loadAll = () => {
     return [loadBySku()];
   };
@@ -21,5 +23,5 @@ const ProductLoader = () => {
 };
 
 module.exports = {
-  ProductLoader
+  ProductLoader: ProductLoader()
 };
