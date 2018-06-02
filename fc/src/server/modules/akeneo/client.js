@@ -44,8 +44,21 @@ const akaneoClient = (axiosInstance, config) => {
         .then(_ => Promise.resolve("should be an URL to a placeholder image"))
     );
 
+    const loadProduct = (sku) =>
+    getToken().then(token => {
+        return axiosInstance
+            .get(`/api/rest/v1/products/${sku}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            .then(result => console.log(result) || result.data);
+    ;
+    });
+
   return {
     loadProducts,
+    loadProduct,
     getImageForProduct
   };
 };

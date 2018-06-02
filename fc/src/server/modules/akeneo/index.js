@@ -4,7 +4,7 @@ import resolvers from "./resolvers";
 import client from "./client";
 import config from "./config/akeneo";
 import axios from "axios";
-import { adaptProducts } from "./utils/adapter";
+import adapter from "./utils/adapter";
 
 const axiosInstance = axios.create({
   baseURL: config.url,
@@ -17,7 +17,7 @@ const axiosInstance = axios.create({
 export default {
   namespace: "Akeneo",
   context: {
-    ProductLoader: ProductLoader(client(axiosInstance, config), adaptProducts)
+    ProductLoader: ProductLoader(client(axiosInstance, config), adapter)
   },
   typeDefs,
   resolvers

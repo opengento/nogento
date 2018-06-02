@@ -1,19 +1,20 @@
 const adaptProduct = product => ({
-  sku: product.ean && product.ean.data,
-  name: product.name && product.name.length && product.name[0].data,
+  sku: product.identifier,
+  name: product.values.name && product.values.name.length && product.values.name[0].data,
   description:
-    product.description &&
-    product.description.length &&
-    product.description[0].data,
+    product.values.description &&
+    product.values.description.length &&
+    product.values.description[0].data,
   imageUrl:
-    product.image &&
-    product.image.length &&
-    product.image[0]._links.download.href
+    product.values.image &&
+    product.values.image.length &&
+    product.values.image[0]._links.download.href
 });
 
 const adaptProducts = data =>
-  data.map(product => product.values).map(adaptProduct);
+  data.map(product => product).map(adaptProduct);
 
 module.exports = {
-  adaptProducts
+  adaptProducts,
+  adaptProduct
 };

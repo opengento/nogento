@@ -1,7 +1,10 @@
-const ProductLoader = (akaneoClient, adaptProducts) => {
-  const loadAll = () => akaneoClient.loadProducts().then(adaptProducts);
+const ProductLoader = (akaneoClient, adapter) => {
+  const loadAll = () => akaneoClient.loadProducts().then(adapter.adaptProducts);
+  const loadProduct = (sku) => akaneoClient.loadProduct(sku).then(product => adapter.adaptProduct(product.values));
+
   return {
-    loadAll
+    loadAll,
+    loadProduct
   };
 };
 
