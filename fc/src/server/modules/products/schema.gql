@@ -3,6 +3,8 @@ type Query {
   products: [Product]
   "Fetch one product by its SKU"
   product(sku: String!): Product
+  "Products contained in a category"
+  productsByCategory(categoryCode: String!): [Product]
 }
 
 "A product"

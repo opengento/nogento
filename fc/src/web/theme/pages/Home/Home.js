@@ -2,15 +2,19 @@ import React from "react";
 import HomeQuery from "./HomeQuery.gql";
 import EnhanceHome from "./EnhanceHome";
 import ProductList from "theme/modules/ProductList";
+import CategoryList from "theme/modules/CategoryList";
 import LoadingArea from "theme/ui/molecules/LoadingArea";
 import Page from "theme/ui/templates/Page";
 
-const Home = ({ products, loading }) => (
+const Home = ({ categories, products, loading }) => (
   <Page>
     {loading ? (
-      <LoadingArea>Loading products…</LoadingArea>
+      <LoadingArea>Loading products and categories…</LoadingArea>
     ) : (
-      <ProductList products={products} />
+      <div>
+        <CategoryList categories={categories} />
+        <ProductList products={products} />
+      </div>
     )}
   </Page>
 );

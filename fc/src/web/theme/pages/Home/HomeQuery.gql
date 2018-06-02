@@ -5,4 +5,8 @@ query Home {
     description
     imageUrl
   }
+  categories {
+    url
+    name
+  }
 }
