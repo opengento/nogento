@@ -1,10 +1,23 @@
 const ProductLoader = (akaneoClient, adaptProducts) => {
-  const loadAll = () => akaneoClient.loadProducts().then(adaptProducts);
+  const search = (filters = {}) =>
+    akaneoClient.loadProducts(filters).then(adaptProducts);
   return {
-    loadAll
+    search
+  };
+};
+
+const CategoryLoader = (akaneoClient, adapter) => {
+  const loadAll = () =>
+    akaneoClient.loadCategories().then(adapter.adaptCategories);
+  const getCategoryByCode = code =>
+    akaneoClient.loadCategoryByCode(code).then(adapter.adaptCategory);
+  return {
+    loadAll,
+    getCategoryByCode
   };
 };
 
 module.exports = {
-  ProductLoader
+  ProductLoader,
+  CategoryLoader
 };

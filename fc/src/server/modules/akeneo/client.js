@@ -18,12 +18,12 @@ const akeneoClient = (axiosInstance, config) => {
       )
       .then(result => result.data.access_token);
 
-  const loadProducts = () =>
+  const loadProducts = filters =>
     getToken().then(token => {
       return axiosInstance
         .get("/api/rest/v1/products", {
           params: {
-            limit: 100
+            search: JSON.stringify(filters)
           },
           headers: {
             Authorization: `Bearer ${token}`
@@ -32,36 +32,35 @@ const akeneoClient = (axiosInstance, config) => {
         .then(result => result.data._embedded.items);
     });
 
-    const loadCategories = () =>
-        getToken().then(token => {
-          return axiosInstance
-            .get("/api/rest/v1/categories", {
-              params: {
-                limit: 100
-              },
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
-            })
-            .then(result => result.data._embedded.items);
-        });
-
-
-  const getImageForProduct = imageUrl =>
-    getToken().then(token =>
-      axiosInstance
-        .get(imageUrl, {
+  const loadCategories = () =>
+    getToken().then(token => {
+      return axiosInstance
+        .get("/api/rest/v1/categories", {
+          params: {
+            limit: 10
+          },
           headers: {
             Authorization: `Bearer ${token}`
           }
         })
-        .catch(_ => Promise.resolve("should be an URL to a placeholder image"))
-        .then(_ => Promise.resolve("should be an URL to a placeholder image"))
-    );
+        .then(result => result.data._embedded.items);
+    });
+
+  const loadCategoryByCode = code =>
+    getToken().then(token => {
+      return axiosInstance
+        .get(`/api/rest/v1/categories/${code}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        .then(result => result.data);
+    });
 
   return {
     loadProducts,
-    getImageForProduct
+    loadCategories,
+    loadCategoryByCode
   };
 };
 

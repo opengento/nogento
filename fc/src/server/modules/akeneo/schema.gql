@@ -1,6 +1,10 @@
 type Query {
   "Fetch all products"
   products: [Product]
+  "Fetch all categories"
+  categories: [Category]
+  "Get a category by code"
+  category(code: String!): Category
 }
 
 "A product"
@@ -15,6 +19,10 @@ type Product {
 
 "A category"
 type Category {
-  "The product name"
+  "The category's url"
+  url: String
+  "The category's name"
   name: String
+  "The category's products"
+  children: [Product]
 }

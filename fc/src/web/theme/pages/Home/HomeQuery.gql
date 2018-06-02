@@ -4,4 +4,8 @@ query Home {
     name
     description
   }
+  categories {
+    url
+    name
+  }
 }

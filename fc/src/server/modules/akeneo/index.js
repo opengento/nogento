@@ -4,21 +4,24 @@ import resolvers from "./resolvers";
 import client from "./client";
 import config from "./config/akeneo";
 import axios from "axios";
-import { adaptProducts } from "./utils/adapter";
+import adapter from "./utils/adapter";
 
 const axiosInstance = axios.create({
   baseURL: config.url,
   headers: {
     "Content-Type": "application/json"
   },
-  timeout: 100000
+  timeout: 1000000000
 });
 
 export default {
   namespace: "Akeneo",
   context: {
-    ProductLoader: ProductLoader(client(axiosInstance, config), adaptProducts),
-    CategoryLoader: CategoryLoader(client(axiosInstance, config), adaptCategories),
+    ProductLoader: ProductLoader(
+      client(axiosInstance, config),
+      adapter.adaptProducts
+    ),
+    CategoryLoader: CategoryLoader(client(axiosInstance, config), adapter)
   },
   typeDefs,
   resolvers

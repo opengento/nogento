@@ -1,15 +1,17 @@
 import React from "react";
 import CategoryItem from "../CategoryItem";
-import MediaGrid from "theme/ui/organisms/MediaGrid";
+import NavigationMenu from "theme/ui/organisms/NavigationMenu";
 
 // We are using a specific JSX operator called the "spread" operator that will pass
-// all properties of the given "product" object as props to the ProductItem component
+// all properties of the given "category" object as props to the CategoryItem component
 // See : https://reactjs.org/docs/jsx-in-depth.html#spread-attributes
 const CategoryList = ({ categories }) => {
   return (
-    <MediaGrid>
-      {categories.map(category => <CategoryItem key={category.name} {...category} />)}
-    </MediaGrid>
+    <NavigationMenu>
+      {categories.map(category => (
+        <CategoryItem key={category.name} {...category} />
+      ))}
+    </NavigationMenu>
   );
 };
 
