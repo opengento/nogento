@@ -1,10 +1,10 @@
-const adaptProducts = require("./utils/adapter");
+import { adaptProducts } from "./utils/adapter";
 const ProductLoader = axiosInstance => {
   const loadAll = () =>
     axiosInstance
       .get("/api/rest/v1/products", {
         params: {
-          limit: 100
+          limit: 10
         }
       })
       .then(result => result.data._embedded.items)

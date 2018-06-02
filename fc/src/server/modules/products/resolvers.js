@@ -5,6 +5,6 @@ export default {
   },
   Product: {
     imageUrl: ({ imageUrl }, _, context) =>
-      context.ProductLoader.getImageForProduct(imageUrl)
+      context.Product.getImageForProduct(imageUrl)
   }
 };
