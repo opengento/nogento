@@ -5,7 +5,7 @@ const defaultSearchParams = {
   limit: 10
 };
 
-const ProductLoader = (axiosInstance, cdnUrl) => {
+const ProductLoader = axiosInstance => {
   const search = (filters = {}) =>
     axiosInstance
       .get("/api/rest/v1/products", {
