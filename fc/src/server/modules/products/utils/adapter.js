@@ -5,10 +5,7 @@ const adaptProduct = product => ({
     product.description &&
     product.description.length &&
     product.description[0].data,
-  imageUrl:
-    product.image &&
-    product.image.length &&
-    product.image[0]._links.download.href
+  imageUrl: product.image && product.image.length && product.image[0].data
 });
 
 const adaptProducts = data =>

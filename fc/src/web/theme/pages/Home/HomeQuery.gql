@@ -3,5 +3,6 @@ query Home {
     sku
     name
     description
+    imageUrl
   }
 }
