@@ -1,19 +1,10 @@
-const ProductLoader = (akeneoClient, adaptProducts) => {
-  const loadAll = () => akeneoClient.loadProducts().then(adaptProducts);
+const ProductLoader = (akaneoClient, adaptProducts) => {
+  const loadAll = () => akaneoClient.loadProducts().then(adaptProducts);
   return {
-    loadAll,
-    getImageForProduct: akeneoClient.getImageForProduct
+    loadAll
   };
 };
 
-const CategoryLoader = (akeneoClient, adaptProducts) => {
-   const loadAll = () => akeneoClient.loadCategories().then(adaptCategories);
-   return {
-    loadAll
-   };
-};
-
 module.exports = {
-  ProductLoader,
-  CategoryLoader
+  ProductLoader
 };
