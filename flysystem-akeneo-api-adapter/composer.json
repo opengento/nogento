@@ -1,0 +1,15 @@
+{
+    "name": "opengento/flysystem-akeneo-api-adapter",
+    "require": {
+        "league/flysystem": "^1.0",
+        "akeneo/api-php-client": "^2.0",
+        "php-http/guzzle6-adapter": "^1.1",
+        "symfony/property-access": "^4.1"
+    },
+    "authors": [
+        {
+            "name": "Grégory Planchat",
+            "email": "gregory@kiboko.fr"
+        }
+    ]
+}
