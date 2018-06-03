@@ -3,4 +3,5 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
   @include horizontal-spacing();
+  min-height: calc(100vh - 14em);
 }

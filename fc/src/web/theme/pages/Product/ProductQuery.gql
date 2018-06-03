@@ -1,17 +1,8 @@
-#import "theme/ui/atoms/Typography/Price/PriceFragment.gql"
-
 fragment Product on Product {
   sku
   name
   imageUrl
   description
-  prices {
-    finalPrice {
-      priceInclTax {
-        ...PriceFragment
-      }
-    }
-  }
 }
 
 query Product($sku: String!) {

@@ -1,11 +1,11 @@
-const BASE_MEDIA_URL = "https://demo.front-commerce.com";
+import { url } from "../../server/config/cdn";
 
 const createMediaUrlFromPath = path => {
   if (path && path.indexOf("http") !== -1) {
     return path;
   }
 
-  return BASE_MEDIA_URL + path;
+  return url + path;
 };
 
 export default createMediaUrlFromPath;

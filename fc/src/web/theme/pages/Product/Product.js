@@ -11,6 +11,7 @@ import ProductSynthesis from "theme/modules/ProductSynthesis";
 import HeroImage from "theme/modules/HeroImage";
 import LoadingArea from "theme/ui/molecules/LoadingArea";
 import createMediaUrlFromPath from "../../../utils/createMediaUrlFromPath";
+import "./Product.scss";
 
 const Product = ({ loading, product }) => {
   if (loading) {
@@ -20,7 +21,7 @@ const Product = ({ loading, product }) => {
   }
 
   return (
-    <div>
+    <div className="product">
       <PageWithMedia
         media={
           <HeroImage

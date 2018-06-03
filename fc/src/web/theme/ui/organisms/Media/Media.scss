@@ -13,7 +13,8 @@
     object-position: center;
   }
 
-  &__details {
+  &__details span {
+    display: block;
     cursor: pointer;
     position: absolute;
     bottom: 0;
@@ -50,7 +51,7 @@
       background-color: rgba(105, 47, 141, 0.3);
       transition: opacity 0.3s ease, transform 0.3s ease-out;
     }
-    .media__details {
+    .media__details span {
       opacity: 1;
       transform: none;
       transition: opacity 0.3s ease, transform 0.3s ease-out;

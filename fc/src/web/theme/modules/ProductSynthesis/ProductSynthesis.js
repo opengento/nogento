@@ -2,15 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import Description from "./Description";
 import Actions from "./Actions";
-import TitleWithPrice from "theme/ui/molecules/TitleWithPrice";
+import H1 from "../../ui/atoms/Typography/Heading/H1";
 import "./ProductSynthesis.scss";
 
 const ProductSynthesis = ({ product }) => (
   <div className="product-view">
     <div className="product-view__title">
-      <TitleWithPrice price={product.prices.finalPrice.priceInclTax}>
-        {product.name}
-      </TitleWithPrice>
+      <H1>{product.name}</H1>
     </div>
     <Actions product={product} />
     <Description>{product.description}</Description>
@@ -21,7 +19,6 @@ ProductSynthesis.propTypes = {
   product: PropTypes.shape({
     sku: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    prices: PropTypes.object.isRequired,
     description: PropTypes.string
   })
 };

@@ -9,11 +9,13 @@ import Footer from "./theme/modules/Footer";
 import Home from "./theme/pages/Home";
 import Category from "./theme/pages/Category";
 import NotFound from "./theme/pages/NotFound";
+import Product from "./theme/pages/Product";
 
 export default () => (
   <BrowserRouter>
     <Layout header={<Header />} footer={<Footer />}>
       <Switch>
+        <Route path="/product/:sku" component={Product} />
         <Route exact path="/" component={Home} />
         <Route path="/category/:code" component={Category} />
         <Route component={NotFound} />
