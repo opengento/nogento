@@ -1,18 +1,35 @@
 .button {
   background-color: $brandPrimary;
+  background-image: linear-gradient(
+    scale-color($brandPrimary, $lightness: 50%),
+    $brandPrimary,
+    scale-color($brandPrimary, $lightness: -30%)
+  );
+  box-shadow: 0px 0px 5px darken($brandSecondary, 30%);
+  border: 3px solid $brandSecondary;
   border: none;
-  color: $fontSecondaryColor;
+  color: $brandWhite;
   font-weight: $bold;
   font-size: $normal;
   padding: 1.4em 3em;
   text-transform: uppercase;
   transition: all 0.2s;
   cursor: pointer;
-
-  &:hover {
-    background-color: $brandHoverPrimary;
+  position: relative;
+  top: 0em;
+  &:hover,
+  &:focus {
+    background-color: scale-color($brandPrimary, $lightness: 50%);
+    box-shadow: 0px 4px 20px darken($brandSecondary, 30%);
+    background-image: linear-gradient(
+      scale-color($brandPrimary, $lightness: 60%),
+      scale-color($brandPrimary, $lightness: -20%)
+    );
+    font-size: 1.1em;
+    position: relative;
+    top: -0.1em;
+    padding: 1.2em 3em;
   }
-
   &.invisible {
     padding: 0;
     background-color: inherit;

@@ -1,0 +1,17 @@
+.home {
+  text-align: center;
+  h2 {
+    color: $brandRed;
+  }
+  &__banner {
+    min-height: 25em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    margin-bottom: 2em;
+    .button {
+      margin-top: 2em;
+    }
+  }
+}
