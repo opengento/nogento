@@ -1,3 +1,8 @@
+$topBarHeight: 7em;
+$menuHeight: 5em;
+$headerHeight: $topBarHeight + $menuHeight;
+$footerHeight: 7em;
+
 @mixin horizontal-spacing() {
   box-sizing: border-box;
   padding-left: 1rem;
@@ -7,4 +12,8 @@
     padding-left: 3rem;
     padding-right: 3rem;
   }
+}
+
+@mixin page-height($variant: 0px) {
+  min-height: calc(100vh - #{$headerHeight} - #{$footerHeight} - #{$variant});
 }

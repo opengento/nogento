@@ -4,7 +4,7 @@ import "./NavigationMenu.scss";
 
 class NavigationMenu extends Component {
   render() {
-    return <ul className="navigation-meny">{this.props.children}</ul>;
+    return <ul className="navigation-menu">{this.props.children}</ul>;
   }
 }
 

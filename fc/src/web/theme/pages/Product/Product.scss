@@ -1,5 +1,5 @@
 .product {
-  min-height: calc(100vh - 14em);
+  @include page-height();
   display: flex;
   align-items: center;
   padding: 7em 0;

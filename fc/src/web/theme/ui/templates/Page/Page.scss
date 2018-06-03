@@ -2,5 +2,5 @@
   @include horizontal-spacing();
   max-width: $desktop;
   margin: 3rem auto;
-  min-height: calc(100vh - 14em);
+  @include page-height();
 }

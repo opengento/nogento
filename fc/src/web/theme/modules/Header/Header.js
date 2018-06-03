@@ -8,16 +8,16 @@ import "./Header.scss";
 const Header = () => {
   return (
     <header className="header">
-      <div className="header__container">
-        <div className="header__logo">
+      <div className="header__top">
+        <div className="header__top__logo">
           <Link to="/">
             <Logo />
             <H1>Nogento</H1>
           </Link>
         </div>
-        <div className="header__nav">
-          <Navigation />
-        </div>
+      </div>
+      <div className="header__nav">
+        <Navigation />
       </div>
     </header>
   );

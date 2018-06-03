@@ -12,7 +12,6 @@ const Home = ({ categories, products, loading }) => (
       <LoadingArea>Loading products and categories…</LoadingArea>
     ) : (
       <div>
-        <CategoryList categories={categories} />
         <ProductList products={products} />
       </div>
     )}

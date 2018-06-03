@@ -1,2 +1,16 @@
 .navigation-menu {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em 2em;
+  height: $menuHeight;
+  margin: 0;
+  list-style: none;
+  background-image: linear-gradient(
+    to top,
+    #692f8d,
+    #694895,
+    #6d5d99,
+    #756f9a,
+    #818199
+  );
 }

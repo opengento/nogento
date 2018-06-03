@@ -8,7 +8,7 @@ export default ({ NavigationQuery }) =>
         variables: {}
       }),
       props: ({ data }) => ({
-        categories: data.navigationMenu,
+        categories: data.categories,
         loading: data.loading
       })
     })

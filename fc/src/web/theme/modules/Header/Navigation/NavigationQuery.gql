@@ -1,5 +1,6 @@
 query Navigation {
-  navigationMenu {
+  categories {
+    url
     name
   }
 }
