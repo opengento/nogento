@@ -7,21 +7,19 @@ import "./ProductItem.scss";
 
 const ProductItem = ({ name, prices, sku, imageUrl }) => {
   return (
-    <div class="product-item">
-      <Link to={`product/${sku}`}>
-        <Media
-          to={`product/${sku}`}
-          media={<img src={createMediaUrlFromPath(imageUrl)} alt={name} />}
-          renderDetails={() => (
-            <Fragment>
-              <Link to={`product/${sku}`} type="reversed">
-                {name}
-              </Link>
-              <ProductPrice prices={prices} />
-            </Fragment>
-          )}
-        />
-      </Link>
+    <div className="product-item">
+      <Media
+        to={`product/${sku}`}
+        media={<img src={createMediaUrlFromPath(imageUrl)} alt={name} />}
+        renderDetails={() => (
+          <Fragment>
+            <Link to={`product/${sku}`} type="reversed">
+              <span className="product-item__details">{name}</span>
+            </Link>
+            <ProductPrice prices={prices} />
+          </Fragment>
+        )}
+      />
     </div>
   );
 };

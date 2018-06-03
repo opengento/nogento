@@ -1,8 +1,5 @@
-#import "theme/ui/molecules/ProductPrice/ProductPriceFragment.gql"
-
 fragment ProductItemFragment on Product {
   name
-  ...ProductPriceFragment
   imageUrl
   sku
 }
