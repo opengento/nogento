@@ -1,14 +1,14 @@
 .header {
+  background: $brandPrimaryBackground;
+  border-bottom: 10px solid $brandPrimary;
   &__top {
-    background: $brandPrimaryBackground;
     color: $reverseFontColor;
     text-align: center;
     height: $topBarHeight;
-    padding: 1em;
+    padding: 1em 1em 1.5em;
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    box-shadow: -4px 0px 20px $brandPrimary;
 
     &__container {
       flex: 1;

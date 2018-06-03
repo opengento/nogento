@@ -1,7 +1,24 @@
 .category-item {
   padding: 1em;
+  flex: 1;
+  text-align: center;
+  &:not(:last-child) {
+    border-right: 3px solid $brandSecondary;
+  }
+  &:hover {
+    position: relative;
+    padding: 0.9em 1em;
+    top: -0.1em;
+    transition: top 0.3s ease;
+    a {
+      color: $brandRed;
+      font-size: 1.1em;
+      transition: color 0.3s ease, font-size 0.3s linear;
+    }
+  }
   a {
-    color: $white;
+    color: $brandWhite;
+    text-transform: uppercase;
     text-decoration: none;
   }
 }

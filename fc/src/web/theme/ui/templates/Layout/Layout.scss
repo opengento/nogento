@@ -7,7 +7,7 @@ html {
 
 body {
   color: $fontColor;
-  background: $backgroundColor;
+  background: mix($shade02, $brandSecondary, 90%);
   font-family: $mainFontFamily;
   font-style: normal;
   font-weight: $regular;

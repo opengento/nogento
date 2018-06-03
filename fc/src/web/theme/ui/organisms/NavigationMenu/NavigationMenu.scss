@@ -1,16 +1,9 @@
 .navigation-menu {
   display: flex;
   flex-wrap: wrap;
-  padding: 1em 2em;
-  height: $menuHeight;
+  justify-content: space-evenly;
+  border-bottom: 20px solid $brandSecondary;
   margin: 0;
+  padding: 0;
   list-style: none;
-  background-image: linear-gradient(
-    to top,
-    #692f8d,
-    #694895,
-    #6d5d99,
-    #756f9a,
-    #818199
-  );
 }

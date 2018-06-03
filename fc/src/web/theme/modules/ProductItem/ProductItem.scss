@@ -1,4 +1,7 @@
 .product-item {
+  background-color: $white;
+  padding: 1em;
+  box-shadow: 1px 0px 20px $brandSecondary;
   a {
     text-decoration: none;
     height: 100%;
